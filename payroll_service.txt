@@ -17,5 +17,3 @@ mysql> show databases;
 
 mysql> use payroll_service;
 Database changed
-mysql> create table employee_payroll(id int auto_increment,name varchar(50),salary int,startdate date,primary key(id));
-Query OK, 0 rows affected (0.07 sec)
