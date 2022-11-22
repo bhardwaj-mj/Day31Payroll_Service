@@ -22,3 +22,12 @@ Query OK, 0 rows affected (0.07 sec)
 mysql> insert into employee_payroll(name,salary,startdate)values("Manoj",30000,'2022-11-1'),("Nagraj",35000,'2022-11-5'),("Romil",40000,'2022-11-10');
 Query OK, 3 rows affected (0.02 sec)
 Records: 3  Duplicates: 0  Warnings: 0
+mysql> select * from employee_payroll;
++----+--------+--------+------------+
+| id | name   | salary | startdate  |
++----+--------+--------+------------+
+|  1 | Manoj  |  30000 | 2022-11-01 |
+|  2 | Nagraj |  35000 | 2022-11-05 |
+|  3 | Romil  |  40000 | 2022-11-10 |
++----+--------+--------+------------+
+3 rows in set (0.00 sec)
