@@ -17,3 +17,8 @@ mysql> show databases;
 
 mysql> use payroll_service;
 Database changed
+mysql> create table employee_payroll(id int auto_increment,name varchar(50),salary int,startdate date,primary key(id));
+Query OK, 0 rows affected (0.07 sec)
+mysql> insert into employee_payroll(name,salary,startdate)values("Manoj",30000,'2022-11-1'),("Nagraj",35000,'2022-11-5'),("Romil",40000,'2022-11-10');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
