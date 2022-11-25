@@ -82,3 +82,87 @@ mysql> select count(salary) from employee_payroll;
 |             3 |
 +---------------+
 1 row in set (0.00 sec)
+mysql> alter table employee_payroll add phonenumber int after startdate;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add address varchar(100) after phonenumber;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add department varchar(50) after salary;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> update employee_payroll set department = 'devops', phonenumber = 12345 , address = "delhi" where id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set department = 'sde', phonenumber = 99999 , address = "pune" where id = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set department = 'testing', phonenumber = 88888 , address = "pune" where id = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> alter table employee_payroll add basic_pay int after salary;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add deductions int after basic_pay;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add taxable_pay int after deductions;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add income_tax int after taxable_pay;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add net_pay int after income_tax;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add basic_pay int after salary;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add deductions int after basic_pay;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add taxable_pay int after deductions;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add income_tax int after taxable_pay;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add net_pay int after income_tax;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_payroll set basic_pay = 5000000.0 , deductions = 100000.0, taxable_pay = 200000.0, income_tax = 200000.0 , net_pay = 500000.0 where id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set basic_pay = 7000000.0 , deductions = 200000.0, taxable_pay = 200000.0, income_tax = 200000.0 , net_pay = 600000.0 where id = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set basic_pay = 6000000.0 , deductions = 200000.0, taxable_pay = 300000.0, income_tax = 200000.0 , net_pay = 700000.0 where id = 3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+--------+--------+--------+-----------+------------+-------------+------------+---------+------------+------------+-------------+---------+
+| id | name   | gender | salary | basic_pay | deductions | taxable_pay | income_tax | net_pay | department | startdate  | phonenumber | address |
++----+--------+--------+--------+-----------+------------+-------------+------------+---------+------------+------------+-------------+---------+
+|  1 | Manoj  | Male   |  30000 |   5000000 |     100000 |      200000 |     200000 |  500000 | devops     | 2022-11-01 |       12345 | delhi   |
+|  2 | Nagraj | Male   |  35000 |   7000000 |     200000 |      200000 |     200000 |  600000 | sde        | 2022-11-05 |       99999 | pune    |
+|  3 | Romil  | Male   |  40000 |   6000000 |     200000 |      300000 |     200000 |  700000 | testing    | 2022-11-10 |       88888 | pune    |
++----+--------+--------+--------+-----------+------------+-------------+------------+---------+------------+------------+-------------+---------+
+3 rows in set (0.00 sec)
