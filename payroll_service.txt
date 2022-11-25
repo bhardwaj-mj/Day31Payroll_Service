@@ -82,3 +82,25 @@ mysql> select count(salary) from employee_payroll;
 |             3 |
 +---------------+
 1 row in set (0.00 sec)
+mysql> alter table employee_payroll add phonenumber int after startdate;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add address varchar(100) after phonenumber;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add department varchar(50) after salary;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> update employee_payroll set department = 'devops', phonenumber = 12345 , address = "delhi" where id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set department = 'sde', phonenumber = 99999 , address = "pune" where id = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set department = 'testing', phonenumber = 88888 , address = "pune" where id = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
