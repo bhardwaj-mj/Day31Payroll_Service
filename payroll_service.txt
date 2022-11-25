@@ -31,3 +31,19 @@ mysql> select * from employee_payroll;
 |  3 | Romil  |  40000 | 2022-11-10 |
 +----+--------+--------+------------+
 3 rows in set (0.00 sec)
+mysql> select salary from employee_payroll where name='Manoj';
++--------+
+| salary |
++--------+
+|  30000 |
++--------+
+1 row in set (0.00 sec)
+mysql> select * from employee_payroll where StartDate between CAST('2018-01-01' as date) and date (now());
++----+--------+--------+------------+
+| id | name   | salary | startdate  |
++----+--------+--------+------------+
+|  1 | Manoj  |  30000 | 2022-11-01 |
+|  2 | Nagraj |  35000 | 2022-11-05 |
+|  3 | Romil  |  40000 | 2022-11-10 |
++----+--------+--------+------------+
+3 rows in set (0.01 sec)
